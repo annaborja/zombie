@@ -1,64 +1,60 @@
 <?php
-/**
- * Set error reporting and display errors settings.  You will want to change these when in production.
- */
-error_reporting(-1);
-ini_set('display_errors', 1);
+$title='Zappos Zombie Zurvival';
+$page='zombie';
 
-/**
- * Website document root
- */
-define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
-
-/**
- * Path to the application directory.
- */
-define('APPPATH', realpath(__DIR__.'/../fuel/app/').DIRECTORY_SEPARATOR);
-
-/**
- * Path to the default packages directory.
- */
-define('PKGPATH', realpath(__DIR__.'/../fuel/packages/').DIRECTORY_SEPARATOR);
-
-/**
- * The path to the framework core.
- */
-define('COREPATH', realpath(__DIR__.'/../fuel/core/').DIRECTORY_SEPARATOR);
-
-// Get the start time and memory for use later
-defined('FUEL_START_TIME') or define('FUEL_START_TIME', microtime(true));
-defined('FUEL_START_MEM') or define('FUEL_START_MEM', memory_get_usage());
-
-// Boot the app
-require APPPATH.'bootstrap.php';
-
-// Generate the request, execute it and send the output.
-try
+if(isset($_GET['p']))
 {
-	$response = Request::forge()->execute()->response();
+    switch($_GET['p'])
+    {
+        case 'ninja':
+            $title='Ninjabook';
+            $page='ninja';
+            break;
+        case 'dragon':
+            $title='A Zoo with Dragons';
+            $page='dragon';
+            break;
+    }
 }
-catch (HttpNotFoundException $e)
-{
-	$route = array_key_exists('_404_', Router::$routes) ? Router::$routes['_404_']->translation : Config::get('routes._404_');
-	if ($route)
-	{
-		$response = Request::forge($route)->execute()->response();
-	}
-	else
-	{
-		throw $e;
-	}
-}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Anna Borja">
+    <meta name="description" content="Your survival guide for the zombie apocalypse">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title;?></title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- Make the container go all the way to the bottom of the topbar -->
+    <style>body{padding-top:60px;}</style>
+    <link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container">
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+        <a class="brand" href="/">Zombie</a>
+        <div class="nav-collapse">
+            <ul class="nav">
+                <li<?php if($page==='ninja')
+                    echo ' class="active"';?>><a href="/index.php?p=ninja">Ninja</a></li>
+                <li<?php if($page==='dragon')
+                    echo ' class="active"';?>><a href="/index.php?p=dragon">Dragon</a></li>
+            </ul>
+        </div>
+    </div></div></div>
+    <div class="container"><?php require '../inc/'.$page.'.php';?></div>
+<script src="/assets/js/jquery-1.7.2.min.js"></script>
+<script src="/assets/js/bootstrap-collapse.js"></script>
+<script src="/assets/js/bootstrap-transition.js"></script>
+</body>
+</html>
 
-// This will add the execution time and memory usage to the output.
-// Comment this out if you don't use it.
-$bm = Profiler::app_total();
-$response->body(
-	str_replace(
-		array('{exec_time}', '{mem_usage}'),
-		array(round($bm[0], 4), round($bm[1] / pow(1024, 2), 3)),
-		$response->body()
-	)
-);
 
-$response->send(true);
+
+
