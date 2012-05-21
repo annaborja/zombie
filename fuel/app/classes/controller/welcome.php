@@ -9,7 +9,7 @@
  * @package  app
  * @extends  Controller
  */
-class Controller_Welcome extends Controller
+class Controller_Welcome extends Controller_Template
 {
 
 	/**
@@ -20,19 +20,17 @@ class Controller_Welcome extends Controller
 	 */
 	public function action_index()
 	{
-		return Response::forge(View::forge('welcome/index'));
+        $this->template->content = View::forge('welcome/index');
 	}
 
-	/**
-	 * A typical "Hello, Bob!" type example.  This uses a ViewModel to
-	 * show how to use them.
-	 * 
-	 * @access  public
-	 * @return  Response
-	 */
-	public function action_hello()
+	public function action_ninja()
 	{
-		return Response::forge(ViewModel::forge('welcome/hello'));
+        $this->template->content = View::forge('welcome/ninja');
+	}
+
+	public function action_dragon()
+	{
+        $this->template->content = View::forge('welcome/dragon');
 	}
 
 	/**
