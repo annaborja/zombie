@@ -5,8 +5,8 @@
             <h1>Ninjabook</h1>
             <form action="/index.php?p=ninja" method="post">
                 <div class="row-fluid">
-                    <label for="books"><p>Enter a list of books&#8212;one
-                        book per line, please!</p></label>
+                    <label for="books"><p>Enter a list of books&#8212;<em>one
+                        book per line, please!</em></p></label>
                 </div>
                 <div class="row-fluid">
                     <textarea class="span10" rows="15" id="books" name="books"></textarea>

@@ -1,7 +1,7 @@
 <div class="row-fluid">
     <div class="span1">&nbsp;</div>
     <div class="span10">
-        <section id="top"><div class="hero-unit">
+        <div class="hero-unit">
             <h1>Zappos Zombie Zurvival</h1>
             <h2>Your survival guide for the zombie apocalypse</h2>
             <div class="row-fluid">
@@ -11,11 +11,11 @@
                     <p>Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                         Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                         Good luck!</p>
-                    <p class="text-right">
+                    <p class="text-center">
                         <a class="btn btn-danger btn-large" href="#1">Begin >></a></p>
                 </div>
             </div>
-        </div></section>
+        </div>
     </div>
 </div>
 <div class="row-fluid">
@@ -30,7 +30,7 @@
             <p>Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Good luck!</p>
-            <p class="text-right">
+            <p class="text-center">
                 <a class="btn btn-danger btn-large" href="#top">Top ^</a>&nbsp;
                 <a class="btn btn-danger btn-large" href="#2">Next >></a></p>
         </div></section>
@@ -52,7 +52,7 @@ Health Sciences Center Shreveport
             <p>Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Good luck!</p>
-            <p class="text-right">
+            <p class="text-center">
                 <a class="btn btn-danger btn-large" href="#1"><< Previous</a>&nbsp;
                 <a class="btn btn-danger btn-large" href="#top">Top ^</a>&nbsp;
                 <a class="btn btn-danger btn-large" href="#3">Next >></a></p>
@@ -72,7 +72,7 @@ Health Sciences Center Shreveport
             <p>Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Good luck!</p>
-            <p class="text-right">
+            <p class="text-center">
                 <a class="btn btn-danger btn-large" href="#2"><< Previous</a>&nbsp;
                 <a class="btn btn-danger btn-large" href="#top">Top ^</a>&nbsp;
                 <a class="btn btn-danger btn-large" href="#4">Next >></a></p>
@@ -92,7 +92,7 @@ Health Sciences Center Shreveport
 (Own work) [GFDL, CC-BY-SA-3.0,
 or CC-BY-SA-2.5-2.0-1.0], via Wikimedia Commons">
             </div>
-            <p class="text-right">
+            <p class="text-center">
                 <a class="btn btn-danger btn-large" href="#3"><< Previous</a>&nbsp;
                 <a class="btn btn-danger btn-large" href="#top">Top ^</a></p>
         </div></section>

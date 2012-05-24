@@ -1,5 +1,5 @@
 <?php
-$pages=array('zombie','ninja','dragon');
+$pages=array('zombie','ninja','dragon','zappos','sudoku','todo');
 $title='Zappos Zombie Zurvival';
 $p='zombie';
 
@@ -15,6 +15,17 @@ if(isset($_GET['p']))
             $title='A Zoo with Dragons';
             $p='dragon';
             break;
+        case 'zappos':
+            $title='Zappos';
+            $p='zappos';
+            break;
+        case 'sudoku':
+            $title='Sudoku';
+            $p='sudoku';
+            break;
+        case 'todo':
+            $title='Todo List';
+            $p='todo';
     }
 }
 ?>
@@ -34,7 +45,7 @@ if(isset($_GET['p']))
     <![endif]-->
 </head>
 <body>
-    <div class="navbar"><div class="navbar-inner"><div class="container">
+    <section id="top"><div class="navbar"><div class="navbar-inner"><div class="container">
         <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
         <div class="nav-collapse">
@@ -45,7 +56,7 @@ if(isset($_GET['p']))
                 <?php endforeach;?>
             </ul>
         </div>
-    </div></div></div>
+    </div></div></div></section>
     <div class="container-fluid">
         <?php require '../inc/'.$p.'.php';?>
     </div>
