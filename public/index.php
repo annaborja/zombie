@@ -1,115 +1,74 @@
 <?php
-$pages=array('zombie','ninja','dragon','zappos','sudoku','todo');
-$title='Zappos Zombie Zurvival';
-$p='zombie';
+$pages = array(
+    'zombie' => 'Zappos Zombie Zurvival',
+    'ninja' => 'Ninjabook',
+    'dragon' => 'A Zoo with Dragons',
+    'zappos' => 'Zappos',
+    'todo' => 'Todo List'
+);
+$p = 'zombie';
+$title = $pages['zombie'];
 
-if(isset($_GET['p']))
+if (isset($_GET['p']) && array_key_exists($input_p = strtolower($_GET['p']), $pages))
 {
-    switch($_GET['p'])
-    {
-        case 'ninja':
-            $title='Ninjabook';
-            $p='ninja';
-            break;
-        case 'dragon':
-            $title='A Zoo with Dragons';
-            $p='dragon';
-            break;
-        case 'zappos':
-            $title='Zappos';
-            $p='zappos';
-            break;
-        case 'sudoku':
-            $title='Sudoku';
-            $p='sudoku';
-            break;
-        case 'todo':
-            $title='Todo List';
-            $p='todo';
-    }
+    $p = $input_p;
+    $title = $pages[$p];
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Anna Borja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title><?php echo $title; ?></title>
     <meta name="description" content="Your survival guide for the zombie apocalypse">
+    <meta name="author" content="Anna Borja">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title;?></title>
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css">
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <!--http://mathiasbynens.be/notes/touch-icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!--1140px Grid styles for IE - http://cssgrid.net/-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-    <section id="top"><div class="navbar"><div class="navbar-inner"><div class="container">
-        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-        <div class="nav-collapse">
-            <ul class="nav">
-                <?php foreach($pages as $page):?>
-                <li<?php if($p===$page) echo ' class="active"';?>><a href="/index.php?p=<?php
-                    echo $page;?>"><?php echo ucfirst($page);?></a></li>
-                <?php endforeach;?>
-            </ul>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    <section id="top"><div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+<?php foreach($pages as $page => $page_title): ?>
+    <li<?php if ($p === $page) echo ' class="active"'; ?>><a href="/index.php?p=<?php
+        echo $page; ?>"><?php echo ucfirst($page); ?></a></li>
+<?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div></div></div></section>
+    </div></section>
     <div class="container-fluid">
-        <?php require '../inc/'.$p.'.php';?>
+<?php include '../inc/'.$p.'.php'; ?>
     </div>
-<script src="/assets/js/jquery-1.7.2.min.js"></script>
-<script src="/assets/js/bootstrap-collapse.js"></script>
-<script src="/assets/js/bootstrap-transition.js"></script>
-<script>
-$(document).ready(function() {
-  function filterPath(string) {
-  return string
-    .replace(/^\//,'')
-    .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-    .replace(/\/$/,'');
-  }
-  var locationPath = filterPath(location.pathname);
-  var scrollElem = scrollableElement('html', 'body');
 
-  $('a[href*=#]').each(function() {
-    var thisPath = filterPath(this.pathname) || locationPath;
-    if (  locationPath == thisPath
-    && (location.hostname == this.hostname || !this.hostname)
-    && this.hash.replace(/#/,'') ) {
-      var $target = $(this.hash), target = this.hash;
-      if (target) {
-        var targetOffset = $target.offset().top;
-        $(this).click(function(event) {
-          event.preventDefault();
-          $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
-            location.hash = target;
-          });
-        });
-      }
-    }
-  });
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-  function scrollableElement(els) {
-    for (var i = 0, argLength = arguments.length; i <argLength; i++) {
-      var el = arguments[i],
-          $scrollElement = $(el);
-      if ($scrollElement.scrollTop()> 0) {
-        return el;
-      } else {
-        $scrollElement.scrollTop(1);
-        var isScrollable = $scrollElement.scrollTop()> 0;
-        $scrollElement.scrollTop(0);
-        if (isScrollable) {
-          return el;
-        }
-      }
-    }
-    return [];
-  }
-});
-</script>
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
