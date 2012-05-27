@@ -1,8 +1,8 @@
 <div class="row-fluid">
     <div class="span1">&nbsp;</div>
     <div class="span10">
-        <div class="hero-unit footer">
-            <h1>Zappos</h1>
+        <div class="hero-unit last">
+            <h1><?php echo $title; ?></h1>
             <p>Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Lorem ipsum placeholder text! Lorem ipsum placeholder text!
                 Good luck!</p>

@@ -1,8 +1,0 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
-
-
-/* TEAM */
-  Developer: Anna Borja
-  Site: http://annaborja.com/
-  Twitter: @anna_borja

@@ -1,3 +1,4 @@
+build/
+intermediate/
 .DS_Store
 *.swp
-public/intermediate/*

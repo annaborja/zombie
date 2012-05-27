@@ -3,7 +3,7 @@
     <div class="span10">
         <header><div class="hero-unit">
             <hgroup>
-                <h1>Zappos Zombie Zurvival</h1>
+                <h1><?php echo $title; ?></h1>
                 <h2>Your survival guide for the zombie apocalypse</h2>
             </hgroup>
             <div class="row-fluid">

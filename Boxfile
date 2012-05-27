@@ -1,11 +1,12 @@
 web1:
-  document_root: public/publish/
-  php_version: 5.3.8
+  document_root: /prod
+
+  php_version: 5.3.10
   php_extensions:
       - pdo_mysql
+
   php_display_errors: "0"
   php_short_open_tag: "0"
-  php_date_timezone: "US/central"
 
 db1:
   type: mysql
