@@ -1,0 +1,44 @@
+@include at-breakpoint(481px 8)
+{
+  .content
+  {
+    /*@include susy-grid-background;*/
+    @include container;
+  }
+
+  .width40
+  {
+    float: left;
+    margin: 4%;
+    width: 32%;
+  }
+
+  .width50
+  {
+    float: left;
+    margin: 4%;
+    width: 42%;
+  }
+
+  .width60
+  {
+    float: left;
+    margin: 4%;
+    width: 52%;
+  }
+
+  .btn-group li
+  {
+    display: inline;
+  }
+
+  button
+  {
+    width: 50px;
+  }
+
+  .msg
+  {
+    font-size: 18px;
+  }
+}

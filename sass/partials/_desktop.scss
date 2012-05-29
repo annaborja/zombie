@@ -1,0 +1,28 @@
+@include at-breakpoint(769px 12)
+{
+  .content
+  {
+    /*@include susy-grid-background;*/
+    @include container;
+
+    max-width: 960px;
+  }
+
+  $box-center-push: 1;
+
+  .box
+  {
+    @include span-columns($total-columns - (2 * $box-center-push), $total-columns);
+  }
+
+  .box-center
+  {
+    @include push($box-center-push);
+  }
+
+  .box-right
+  {
+    @include push(2 * $box-center-push);
+    @include span-columns($total-columns - (2 * $box-center-push) omega, $total-columns);
+  }
+}

@@ -1,4 +1,6 @@
+.sass-cache/
 build/
 intermediate/
 .DS_Store
 *.swp
+config.rb
