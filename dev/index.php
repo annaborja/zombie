@@ -43,7 +43,7 @@ if (isset($_GET['p']) && array_key_exists($input_p = strtolower($_GET['p']), $pa
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <a name="top"><nav></a><ul>
+  <nav id="top"><ul>
 <?php foreach($pages as $page => $page_title): ?>
     <li><a class="btn btn-danger<?php if ($p === $page) echo ' active'; ?>"
     href="/index.php?p=<?php echo $page; ?>"><?php echo ucfirst($page); ?></a></li>

@@ -7,11 +7,10 @@
   <img class="width40" src="/img/saturn.jpg" alt="'Saturn Devouring His Son' by Francisco Goya">
 
   <div class="width60">
-    <p>So, it's begun. The dawn of the undead has come at last,
-      and the only rule is: only the fittest survive.</p>
+    <p>So, it's begun. The dawn of the undead has come at last.</p>
 
     <p>Some will die. Some will <strong>un</strong>die. But luckily for you,
-      the Zappos Zombie Zurvival Guide is here to give you three vital tips
+      the Zappos Zombie Zurvival Guide is here to offer three vital tips
       that just might mean the difference between life, death, and undeath.</p>
 
     <p>So what are you waiting for? Time is ticking! This is Z-Hour, my friend.
@@ -23,7 +22,7 @@
   </div>
 </header>
 
-<a name="1"><div class="box box-left"></a>
+<div id="1" class="box box-left">
   <h1>Stock Up on Supplies</h1>
 
   <img class="last" src="/img/supplies.jpg" alt="Canned food"
@@ -31,15 +30,15 @@
 [GFDL or CC-BY-SA-3.0], via Wikimedia Commons">
 
   <p>No fuel means no energy, and you'll need all the energy you can get
-    if you want to outpace the shambling zombie hordes. First things first:
-    stock up on supplies!</p>
+    if you want to outpace the shambling zombie hordes.</p>
 
-  <p>Head over to the closest supermarket or gas station (better hurry
-    before all the other survivors clear the shelves!). Grab all the food and
-    drinks that you can get your hands on: chips, cookies, water, Red Bull,
-    whatever. Now is not the time to worry about calories or high fructose
-    corn syrup. Also, make sure to pick up batteries, flashlights, shotgun
-    shells, etc. Standard survival supplies. Grab what you can, get into your car, and hit the gas!</p>
+  <p>Head to the nearest supermarket or gas station (better hurry before
+    all the other looters clear the shelves!). Gather up all the food and drinks
+    that you can get your hands on: bread, chips, water, Red Bull, whatever.
+    Now is not the time to worry about calories or high fructose corn syrup.
+    Also, make sure to pick up batteries, flashlights, first aid kits, shotgun
+    shells, etc. Standard survival supplies. Grab what you can, get into your car,
+    and hit the gas!</p>
 
   <ul class="btn-group">
     <li><a class="btn btn-danger btn-large" href="#top">Top ^</a></li>
@@ -47,7 +46,7 @@
   </ul>
 </div>
 
-<a name="2"><div class="box box-right"></a>
+<div id="2" class="box box-right">
   <h1>Aim for the Brain</h1>
 
   <img class="last" src="/img/brain.jpg" alt="A human brain"
@@ -59,12 +58,12 @@ Health Sciences Center Shreveport
 
   <p>If there's one thing you should have learned from watching <em>Shaun of the Dead</em>,
     it's that a zombie's weak point is its brain. Got a shotgun? Good! I hope you have
-    good aim. Gunless? Well, then, you'll just have to improvise.</p>
+    good aim. Gun-less? Well, then you'll just have to improvise.</p>
 
   <p>Wherever you go, make sure you've got a nice, heavy, blunt instrument with you.
-    A baseball bat (or a cricket bat, for all our friends across the Atlantic) features
-    a comfortable grip and a nice heft. Even something like a golf club or a rolling pin
-    will do. Anything you can decapitate with.</p>
+    A baseball bat (or a cricket bat, for our friends across the Atlantic) features
+    a comfortable grip and good heft. Even something like a golf club or a rolling pin
+    will do. Anything you can bludgeon with.</p>
 
   <ul class="btn-group">
     <li><a class="btn btn-danger btn-large" href="#1"><< Tip #1</a></li>
@@ -73,7 +72,7 @@ Health Sciences Center Shreveport
   </ul>
 </div>
 
-<a name="3"><div class="box box-left"></a>
+<div id="3" class="box box-left">
   <h1>When in Doubt, RUN</h1>
 
   <img class="last" src="/img/run.jpg" alt="Someone running"
@@ -81,14 +80,14 @@ Health Sciences Center Shreveport
 (jogger-girl-surf-morro-bay_0880)
 [CC-BY-2.0], via Wikimedia Commons">
 
-  <p>Fortune favors the bold, but you know what? Sometimes, flight is wiser than fight.
-    When in doubt, get the heck out! Zombies may be slow, but don't let their snail-paced
-    shuffling get you to let down your guard. The undead are <strong>deadly</strong> in groups.
-    Don't let yourself get outnumbered, and <strong>do not</strong> let yourself get cornered.
-    And never forget: when in doubt, <strong>RUN.</strong></p>
+  <p>Fortune favors the bold, but sometimes, flight is wiser than fight.
+    When in doubt, get out! Zombies may be slow, but don't let their snail-paced
+    shuffling lull you into a false sense of security. The undead are deadly in groups.
+    Don't let yourself get outnumbered. Don't let yourself get cornered. And above all:
+    when in doubt, <strong>RUN AWAY.</strong></p>
 
-  <p>One more tip: since you're going to be running around a lot, you might want to invest
-    in a good pair of <a href="http://www.zappos.com">new shoes</a>.</p>
+  <p>Also, since you're going to be running around quite a bit, you might want to invest
+    in a sturdy new pair of <a href="http://www.zappos.com">shoes</a>.</p>
 
   <ul class="btn-group">
     <li><a class="btn btn-danger btn-large" href="#2"><< Tip #2</a></li>
@@ -97,12 +96,12 @@ Health Sciences Center Shreveport
   </ul>
 </div>
 
-<a name="4"><div class="box box-center last"></a>
+<div id="4" class="box box-center last">
   <h1>End</h1>
 
-  <p>Well, that's it! Three vital tips to help you survive the zombie apocalypse.
-    It won't be easy. It won't be clean. But with some luck, a stock of supplies, a baseball bat,
-    and a good pair of shoes, you just might survive the zombie uprising.</p>
+  <p>Well, that's it! Three tips to help you survive the zombie apocalypse.  It won't
+    be easy. It won't be clean. But with some determination, a stock of supplies, a
+    baseball bat, and a good pair of shoes, you just might survive the undead uprising.</p>
 
   <p class="last"><strong>Good luck!</strong></p>
 

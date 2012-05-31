@@ -1,8 +1,8 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
-
-
 /* TEAM */
   Developer: Anna Borja
   Site: http://annaborja.com/
-  Twitter: @anna_borja
+  GitHub: annaborja
+
+/* SITE */
+  Boilerplate/frameworks: HTML5 Boilerplate, Normalize.css, Susy, Blueprint, Twitter Bootstrap
+  Tools: Vim, SASS, Compass, Git, GitHub

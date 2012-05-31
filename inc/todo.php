@@ -18,8 +18,6 @@ function checkList($dbh, $list_hash)
 
 function fetchList($dbh, $list_id, $list_hash)
 {
-  global $list_deleted;
-
   $stmt = $dbh->prepare('SELECT items.id AS item_id, item FROM
     lists LEFT JOIN items ON lists.id=list_id WHERE lists.id = ?');
 
@@ -49,6 +47,7 @@ function fetchList($dbh, $list_id, $list_hash)
 
     <ul>
       <li><input class="btn btn-danger btn-large" type="submit" name="update" value="Update"></li>
+      <li><input class="btn btn-inverse" type="submit" name="delete" value="DELETE LIST"></li>
     </ul>
   </form>
 
@@ -62,15 +61,13 @@ function fetchList($dbh, $list_id, $list_hash)
   </form>
 <?php
   }
-  elseif (!isset($list_deleted) || !$list_deleted)
+  else
     printMsg('Failed to fetch list');
 }
 
 function deleteList($dbh, $list_id)
 {
-  global $list_deleted;
-
-  $list_deleted = printMsg(($is_success = $dbh->exec('DELETE FROM lists WHERE id = '.$list_id)) ?
+  return printMsg(($is_success = $dbh->exec('DELETE FROM lists WHERE id = '.$list_id)) ?
     'List deleted' : 'Failed to delete list', $is_success);
 }
 
@@ -80,9 +77,10 @@ function updateList($dbh, $list_info, $post)
     $post['delete_items'] = array();
 
   if ($list_info['count'] == count($post['delete_items']))
-    deleteList($dbh, $list_info['id']);
+    $list_deleted = deleteList($dbh, $list_info['id']);
   else
   {
+    $list_deleted = 0;
     $stmt = $dbh->prepare('DELETE FROM items WHERE id = ?');
 
     foreach ($post['delete_items'] as $delete_item)
@@ -98,6 +96,8 @@ function updateList($dbh, $list_info, $post)
 
     printMsg($is_success ? 'List updated' : 'Update failed', $is_success);
   }
+
+  return $list_deleted;
 }
 
 function addListItem($dbh, $list_id, $item)
@@ -134,12 +134,15 @@ try
   {
     if ($list_info = checkList($dbh, $_GET['list']))
     {
-      if (isset($_POST['update']))
-        updateList($dbh, $list_info, $_POST);
+      if (isset($_POST['delete']))
+        $list_deleted = deleteList($dbh, $list_info['id']);
+      elseif (isset($_POST['update']))
+        $list_deleted = updateList($dbh, $list_info, $_POST);
       elseif (isset($_POST['new_item']))
         addListItem($dbh, $list_info['id'], $_POST['new_item']);
 
-      fetchList($dbh, $list_info['id'], $_GET['list']);
+      if (!isset($list_deleted) || !$list_deleted)
+        fetchList($dbh, $list_info['id'], $_GET['list']);
     }
     else
       printMsg('List not found');
@@ -156,7 +159,7 @@ try
       <li><label for="list">Fetch an old list:</label>
         <input class="text-input input-short print-remove" type="text" id="list" name="list"
           value="<?php echo isset($_GET['list']) ?
-            htmlentities($_GET['list']) : '00000000000000000000000000000000'; ?>">
+            htmlentities($_GET['list']) : '00000000000000000000000000000000'; ?>" maxlength="32">
         <input class="btn btn-danger" type="submit" value="Fetch"></li>
     </ul>
   </form>
@@ -165,7 +168,7 @@ try
     <ul>
       <li><label for="new_list">Create a new list:</label>
         <input class="text-input print-remove" type="text" id="new_list" name="new_list"
-          value="New item (limit: 255 characters)">
+          value="New item (limit: 255 characters)" maxlength="255">
         <input class="btn btn-danger" type="submit" value="Create"></li>
     </ul>
   </form>

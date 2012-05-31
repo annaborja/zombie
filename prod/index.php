@@ -36,14 +36,14 @@ if (isset($_GET['p']) && array_key_exists($input_p = strtolower($_GET['p']), $pa
   <link rel=apple-touch-icon-precomposed sizes=72x72 href="apple-touch-icon-72x72-precomposed.png">
   <link rel=apple-touch-icon-precomposed href="apple-touch-icon-precomposed.png">
 
-  <link rel=stylesheet href='css/4a7c124.css'>
+  <link rel=stylesheet href='css/ecee1d3.css'>
     
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <a name=top><nav></a><ul>
+  <nav id=top><ul>
 <?php foreach($pages as $page => $page_title): ?>
     <li><a class="btn btn-danger<?php if ($p === $page) echo ' active'; ?>"
     href="/index.php?p=<?php echo $page; ?>"><?php echo ucfirst($page); ?></a></li>
