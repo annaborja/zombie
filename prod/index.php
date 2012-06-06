@@ -2,8 +2,6 @@
 $pages = array(
   'zombie' => 'Zappos Zombie Zurvival',
   'ninja' => 'Ninjabook',
-  'dragon' => 'A Zoo with Dragons',
-  'zappos' => 'Zappos',
   'todo' => 'TODO'
 );
 $p = 'zombie';
